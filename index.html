@@ -10,17 +10,115 @@
     <meta property="og:title" content="Tourist in Tour">
     <meta property="og:image" content="./images/tour.jpg">
     <meta property="og:description" content="엔데믹 시대의 투어는 투어리스트">
+    <link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/reset.css">
 
-
-    <title>Document</title>
+    <title>Tourist in Tour</title>
     <style>
+        /* 기본 */
         @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
         :root{
             font-family: 'Nanum Gothic', sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 22px;
+            color: #666;
+        }
+        .wrap{
+            overflow: hidden;
+        }
+        .container{
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .slider .container{
+            max-width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        .header{
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+        }
+        .slider{
+            background: green;
+            height: 400px;
+        }
+        .best{
+            background: blue;
+        }
+        .notice{
+            background: yellow;
+        }
+        .aside{
+            background: cyan;
+        }
+        .footer{
+            background: magenta;
+        }
+        /* body{background: red;} */
+
+
+
+
+
+
+        /* 800px 이상 미디어쿼리 */
+        @media (min-width:800px){
+            /* body{background: green;} */
+        }
+
+
+
+        /* 960px 이상 미디어쿼리 */
+        @media (min-width:960px){
+            .container{
+                padding: 0 60px;
+            }
+            /* body{background: blue;} */
         }
     </style>
 </head>
 <body>
-    
+    <section class="wrap">
+        <header class="header">
+            <div class="container">
+                <h1>사이트 제목</h1>
+
+            </div>
+        </header>
+        <section class="sec sec01 slider">
+            <div class="container">
+                <h2>섹션 제목</h2>
+
+            </div>
+        </section>
+        <section class="sec sec02 best">
+            <div class="container">
+                <h2>섹션 제목</h2>
+
+            </div>
+        </section>
+        <section class="sec sec01 notice">
+            <div class="container">
+                <h2>섹션 제목</h2>
+
+            </div>
+        </section>
+        <aside class="aside">
+            <div class="container">
+                <h2>사이드 제목</h2>
+
+            </div>
+        </aside>
+        <footer class="footer">
+            <div class="container">
+
+            </div>
+        </footer>
+    </section>
 </body>
 </html>
