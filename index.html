@@ -42,10 +42,20 @@
             left: 0;
             right: 0;
             top: 0;
+            z-index: 10000;
+
+            padding: 36px 0;
+            background: rgba(0,0,0,0.2);
         }
-        .logo a{
+        .header .container{
+            display: flex;
             
         }
+
+        .nav{
+            display: none;
+        }
+
         .slider{
 
         }
@@ -96,32 +106,67 @@
     <section class="wrap">
         <header class="header">
             <div class="container">
-                <h1 class="main-tit logo"><a href="./index.html">tourist in tour</a></h1>
-                <!-- <h1 class="main-tit logo"><a href="./index.html"><span>tourist in tour</span></a></h1> -->
-
+                <h1 class="main-tit logo"><a href="./index.html"><span>tourist in tour</span><img src="./images/logo.png" alt="logo"></a></h1>
+                <div class="btn-nav"><span>네비버튼</span></div>
+                <nav class="nav">
+                    <ul class="member">
+                        <li><a href="#">로그인</a></li>
+                        <li><a href="#">회원가입</a></li>
+                    </ul>
+                    <ul class="main-nav">
+                        <li>
+                            <a href="#">여행정보</a>
+                            <ul class="sub-nav">
+                                <li><a href="#">국내</a></li>
+                                <li><a href="#">해외</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">고객센터</a>
+                            <ul class="sub-nav">
+                                <li><a href="#">공지사항</a></li>
+                                <li><a href="#">문의하기</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">상품투어</a>
+                            <ul class="sub-nav">
+                                <li><a href="#">프로그램 소개</a></li>
+                                <li><a href="#">여행자료</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">티켓/가이드</a>
+                            <ul class="sub-nav">
+                                <li><a href="#">항공</a></li>
+                                <li><a href="#">호텔</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
             </div>
         </header>
         <section class="sec sec01 slider">
             <div class="container">
-                <h2>섹션 제목</h2>
+                <!-- <h2>섹션 제목</h2> -->
 
             </div>
         </section>
         <section class="sec sec02 best">
             <div class="container">
-                <h2>섹션 제목</h2>
+                <!-- <h2>섹션 제목</h2> -->
 
             </div>
         </section>
         <section class="sec sec01 notice">
             <div class="container">
-                <h2>섹션 제목</h2>
+                <!-- <h2>섹션 제목</h2> -->
 
             </div>
         </section>
         <aside class="aside">
             <div class="container">
-                <h2>사이드 제목</h2>
+                <!-- <h2>사이드 제목</h2> -->
 
             </div>
         </aside>
