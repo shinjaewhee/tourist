@@ -49,12 +49,18 @@
         }
         .best{
             background: blue;
+            height: 400px;
         }
         .notice{
             background: yellow;
+            height: 400px;
         }
         .aside{
             background: cyan;
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
         }
         .footer{
             background: magenta;
@@ -77,6 +83,11 @@
         @media (min-width:960px){
             .container{
                 padding: 0 60px;
+            }
+            .aside{
+                left: auto;
+                top: 120px;
+                bottom: auto;
             }
             /* body{background: blue;} */
         }
