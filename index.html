@@ -64,6 +64,7 @@
             width: 25px;
             height: 17px;
             display: flex;
+            cursor: pointer;
             flex-flow: column nowrap;
             justify-content: space-between;
             align-items: flex-start;
@@ -91,9 +92,37 @@
             order: 3;
             width: 25px;
         }
-
         .nav{
-            display: none;
+            /* display: none; */
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 100%;
+            background: #31353d;
+            color: #fff;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .member{
+            display: flex;
+            justify-content: flex-start;
+            padding: 20px;
+        }
+        .member li:first-child{
+            position: relative;
+            margin-right: 21px;
+        }
+        .member li:first-child::after{
+            content: '';
+            display: block;
+            width: 1px;
+            height: 10px;
+            background: #fff;
+            position: absolute;
+            right: -10px;
+            top: 6px;
         }
 
         .slider{
@@ -132,6 +161,9 @@
             .nav{
                 display: block;
                 order: 2;
+                background: transparent;
+                align-items: flex-end;
+                position: static;
             }
 
         }
