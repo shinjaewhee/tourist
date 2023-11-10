@@ -12,7 +12,9 @@
   <meta property="og:description" content="엔데믹 시대의 투어는 투어리스트">  
   <link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
   <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
   <title>Tourist in Tour</title>
   <style>
     /* 기본 */
@@ -204,9 +206,34 @@
       margin-right:12px;
     }
     
-    .slider{
-      
+    .slider h2{
+      display:none;
     }
+    .bx-wrapper {
+      -moz-box-shadow:none;
+      -webkit-box-shadow:none;
+      box-shadow:none;
+      border:none;
+      background:transparent;
+    }
+    .bx-controls-direction{
+      display:none;
+    }
+    .bx-wrapper .bx-pager{
+      bottom:20px;      
+    }
+    .bx-wrapper .bx-pager.bx-default-pager a{
+      background:#fff;
+    }
+    .bx-wrapper .bx-pager.bx-default-pager a:hover, .bx-wrapper .bx-pager.bx-default-pager a.active, .bx-wrapper .bx-pager.bx-default-pager a:focus {
+      background: #fff;      
+    }
+    .bx-wrapper .bx-pager.bx-default-pager a.active{
+      width:30px;
+    }
+    
+
+
     .best{
       
     }
@@ -265,7 +292,13 @@
         background:none !important;
         text-align:right;
       }
-      
+      .slider{
+        height:550px !important;
+      }
+      .slider .img-box{
+        top:50%;
+        transform:translateY(-50%);
+      }
       
     }
 
@@ -331,8 +364,33 @@
     </header>
     <section class="sec sec01 slider">
       <div class="container">
-        <!-- <h2>섹션제목</h2> -->
-
+        <h2>슬라이더</h2>
+        <div class="slider slider-wrap">
+          <div class="img-box">
+            <a href="#">
+              <picture>                
+                <source media="(min-width:800px)" srcset="./images/mainslide01.jpg">
+                <img src="./images/mainslide_mob01.jpg" alt="슬라이드01">
+              </picture>
+            </a>
+          </div>
+          <div class="img-box">
+            <a href="#">
+              <picture>                
+                <source media="(min-width:800px)" srcset="./images/mainslide02.jpg">
+                <img src="./images/mainslide_mob02.jpg" alt="슬라이드02">
+              </picture>
+            </a>
+          </div>
+          <div class="img-box">
+            <a href="#">
+              <picture>                
+                <source media="(min-width:800px)" srcset="./images/mainslide03.jpg">
+                <img src="./images/mainslide_mob03.jpg" alt="슬라이드03">
+              </picture>
+            </a>
+          </div>
+        </div>
       </div>
     </section>
     <section class="sec sec02 best">
@@ -365,7 +423,6 @@
       $('#header').toggleClass('active');
       $('#nav').slideToggle(300);
     })
-
     $('.main-nav>li').mouseenter(function(){
       let winWidth = $(window).width();
       if(winWidth>=800){
@@ -374,26 +431,20 @@
         fnSubHide();
       }
     })
-
     $('#header').mouseleave(function(){
       fnSubHide();
     })
-
     $(window).resize(function(){
       let winWidth = $(this).width();
       if(winWidth<800){
         fnSubHide();
       }
     })
-
-
     // 서브 감추기
     function fnSubHide(){
       $('.sub-nav').hide();
       $('#header').removeClass('after');
     }
-
-
     // 서브 보이기
     function fnSubShow(self){
       $('.sub-nav').hide();
@@ -402,6 +453,9 @@
       });
       $('#header').addClass('after');
     }
-  </script>
+
+    // BXslide
+    $(".slider-wrap").bxSlider();
+</script>
 </body>
 </html>
