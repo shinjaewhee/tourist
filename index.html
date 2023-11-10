@@ -108,7 +108,8 @@
         .member{
             display: flex;
             justify-content: flex-start;
-            padding: 20px;
+            padding: 12px;
+            font-size: 0.8em;
         }
         .member li:first-child{
             position: relative;
@@ -123,6 +124,31 @@
             position: absolute;
             right: -10px;
             top: 6px;
+        }
+        .main-nav{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            width: 100%;
+            border-top: 1px solid #fff;
+            border-bottom: 1px solid #fff;
+            font-size: 0.9em;
+        }
+        .main-nav>li{
+            padding: 16px;
+        }
+        .main-nav>li:nth-child(1){
+            border-right: 1px solid #fff;
+            border-bottom: 1px solid #fff;
+        }
+        .main-nav>li:nth-child(2){
+            border-bottom: 1px solid #fff;
+        }
+        .main-nav>li:nth-child(3){
+            border-right: 1px solid #fff;
+        }
+
+        .sub-nav{
+            display: none;
         }
 
         .slider{
@@ -164,6 +190,7 @@
             .nav{
                 display: block;
                 order: 2;
+                width: 455px;
                 background: transparent;
                 align-items: flex-end;
                 position: static;
@@ -171,7 +198,15 @@
             .member{
                 padding: 0 0 20px 0;
             }
-
+            .main-nav{
+                grid-template-columns: repeat(4,1fr);
+            }
+            .main-nav,.main-nav>li{
+                border: none !important;
+            }
+            .main-nav>li{
+                padding: 0;
+            }
         }
 
 
