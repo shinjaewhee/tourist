@@ -25,6 +25,7 @@
       font-size:16px;
       line-height:22px;
       color:#666;
+      scroll-behavior: smooth;
     }
     .wrap{
       overflow:hidden;
@@ -115,8 +116,6 @@
       background:#fff;
       text-indent:-9999px;
     }
-
-
     .header .container::after{
       content:'';
       display: block;
@@ -238,6 +237,53 @@
         column-gap: 15px;
         row-gap: 40px;
     }
+    .best h2{
+        font-weight: 500;
+        font-size: 2em;
+        line-height: 1.5;
+        text-align: center;
+    }
+    .best h2 span{
+        font-weight: 800;
+    }
+    .best .art{
+        display: grid;
+        grid-template-columns: auto;
+        text-align: center;
+    }
+    .best .art h3{
+        order: 2;
+        margin-bottom: 20px;
+        font-weight: 800;
+        font-size: 1.2em;
+        color: #333;
+    }
+    .best .art .img-box{
+        order: 1;
+        margin-bottom: 20px;
+    }
+    .best .art p{
+        margin-bottom: 24px;
+        padding: 0 56px;
+        order: 3;
+    }
+    .best .art .btn-view{
+        position: relative;
+        order: 4;
+    }
+    .best .art .btn-view::before{
+        content: '';
+        display: block;
+        width: 40px;
+        height: 2px;
+        background: #333;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: -1px;
+    }
+
+
     .notice{
       
     }
@@ -246,11 +292,39 @@
       left:0;
       right:0;
       bottom:0;
+      background: #666;
+      color: #fff;
+      text-align: center;
     }
+    .aside ul{
+        display: flex;
+        flex-flow: row wrap;
+    }
+    .aside li{
+        width: 33.333333%;
+    }
+    .aside li:last-child{
+        position: fixed;
+        right: 20px;
+        bottom: 100px;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: #b2b2b2;
+        line-height: 44px;
+        display: none;
+    }
+    .aside li:last-child.active{
+        display:block;
+        animation: show-back 0.3s forwards;
+    }
+
     .footer{
       
     }
     /* body{background:red;} */
+
+
 
 
 
@@ -313,6 +387,21 @@
       .bx-wrapper .bx-pager.bx-default-pager a.active{
         width: 30px;
       }
+      .best .container{
+        grid-template-columns: repeat(3,1fr);
+      }
+      .best h2{
+        grid-column: 1/4;
+      }
+      .best .art p{
+        padding: 0 24px;
+      }
+      .aside li{
+        display: none;
+      }
+      .aside li:last-child{
+        display: block;
+      }
     }
 
 
@@ -326,6 +415,19 @@
         left:auto;
         top:120px;
         bottom:auto;
+      }
+      .aside li{
+        display: block;
+        width: 100%;
+      }
+      .aside li:last-child{
+        position: static;
+        width: 100%;
+        height: auto;
+        border-radius: 0;
+        line-height: auto;
+        background: #fff;
+        color: #666;
       }
       /* body{background:blue;} */
     }
@@ -408,7 +510,7 @@
     </section>
     <section class="sec sec02 best">
       <div class="container">
-        <h2>다시 찾는 인기 여행지 TOP3</h2>
+        <h2>다시 찾는 인기 여행지<span>TOP3</span></h2>
         <article class="art art01">
             <h3>성패트릭 대성당</h3>
             <div class="img-box"><img src="./images/img_topplace01.jpg" alt="성패트릭 성당"></div>
@@ -438,7 +540,12 @@
     <aside class="aside">
       <div class="container">
         <!-- <h2>사이드제목</h2> -->
-
+        <ul>
+            <li><a href="#">전화문의</a></li>
+            <li><a href="#">카톡상담</a></li>
+            <li><a href="#">오시는길</a></li>
+            <li id="btn-top"><a href="#header">TOP</a></li>
+        </ul>
       </div>
     </aside>
     <footer class="footer">
@@ -486,6 +593,18 @@
 
     // BXslide
     $(".slider-wrap").bxSlider();
+
+    $(window).scroll(function(){
+        let winWidth = $(window).width();
+        if(winWidth<800){
+            let winTop = $(window).scrollTop();
+            if(winTop>=$('.slider').height()){
+                $('.aside li').last().addClass('active');
+            }else{
+                $('.aside li').last().removeClass('active');
+            }
+        }
+    })
 </script>
 </body>
 </html>
