@@ -47,6 +47,18 @@
             padding: 36px 0;
             background: rgba(0,0,0,0.2);
         }
+        .header::after{
+            content: '';
+            display: block;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 100%;
+            bottom: -60px;
+            background: red;
+            opacity: 0;
+            transition: 0.3s;
+        }
         .header .container{
             display: flex;
             flex-flow: row nowrap;
@@ -93,14 +105,14 @@
             width: 25px;
         }
         .nav{
-            /* display: none; */
+            display: none;
             position: absolute;
             left: 0;
             right: 0;
             top: 100%;
             background: #31353d;
             color: #fff;
-            display: flex;
+            /* display: flex; */
             flex-flow: column nowrap;
             justify-content: space-between;
             align-items: flex-start;
@@ -137,6 +149,7 @@
             padding: 16px 16px 16px 48px;
             background: url(./images/ico_gnb01.png) no-repeat left center;
             background-size: 48px;
+            position: relative;
         }
         .main-nav>li:nth-child(1){
             border-right: 1px solid #fff;
@@ -153,9 +166,16 @@
         .main-nav>li:nth-child(4){
             background-image: url(./images/ico_gnb04.png);
         }
-
         .sub-nav{
             display: none;
+            position: absolute;
+            left: 50%;
+            top: 80px;
+            z-index: 1000;
+            width: 200px;
+        }
+        .sub-nav li:first-child{
+            margin-right: 12px;
         }
 
         .slider{
@@ -215,8 +235,10 @@
             }
             .main-nav>li{
                 padding: 0;
+                background: none !important;
                 text-align: right;
             }
+            
         }
 
 
