@@ -205,7 +205,6 @@
     .sub-nav li:first-child{
       margin-right:12px;
     }
-    
     .slider h2{
       display:none;
     }
@@ -230,12 +229,14 @@
     .bx-wrapper .bx-pager.bx-default-pager a:hover, .bx-wrapper .bx-pager.bx-default-pager a.active, .bx-wrapper .bx-pager.bx-default-pager a:focus {
       background: #000;      
     }
-    
-
-
-
     .best{
       
+    }
+    .best .container{
+        display: grid;
+        grid-template-columns: 1fr;
+        column-gap: 15px;
+        row-gap: 40px;
     }
     .notice{
       
@@ -407,8 +408,25 @@
     </section>
     <section class="sec sec02 best">
       <div class="container">
-        <!-- <h2>섹션제목</h2> -->
-
+        <h2>다시 찾는 인기 여행지 TOP3</h2>
+        <article class="art art01">
+            <h3>성패트릭 대성당</h3>
+            <div class="img-box"><img src="./images/img_topplace01.jpg" alt="성패트릭 성당"></div>
+            <p>바쁜 뉴욕 안에서 정교하면서도 웅장한 기운에 침묵하게 되는 기도의 시간</p>
+            <div class="btn-view"><a href="#">VIEW</a></div>
+        </article>
+        <article class="art art02">
+            <h3>원주 뮤지엄 '산'</h3>
+            <div class="img-box"><img src="./images/img_topplace02.jpg" alt="원주 뮤지엄 '산'"></div>
+            <p>전시된 유산들을 담아낸 건물에 신비로운 돌과 물의 테마가 담겨있다.</p>
+            <div class="btn-view"><a href="#">VIEW</a></div>
+        </article>
+        <article class="art art03">
+            <h3>일본 만국박람회 기념공원</h3>
+            <div class="img-box"><img src="./images/img_topplace03.jpg" alt="일본 만국박람회 기념공원"></div>
+            <p>오사카 센리 반파쿠에는 드넓은 대지에 정원과 들, 물과 함께하는 문화가 있다.</p>
+            <div class="btn-view"><a href="#">VIEW</a></div>
+        </article>
       </div>
     </section>
     <section class="sec sec03 notice">
